@@ -1,0 +1,52 @@
+// mv
+.main-visual {
+    &__ttl {
+        padding-top: 10vw;
+        & .mv__ttlWrap {
+            & h1 {
+                font-size: $mvTtlSm;
+            }
+        }
+    }
+    & .waveBox {
+        height: 80px;
+    }
+}
+
+// Who I am
+.about {
+    &__contents {
+        & .textWrap {
+            padding: 2rem 0vw;
+            > p {
+                line-height: $sm-lineHeight;
+            }
+        }
+        & .myPhoto {
+            position: relative;
+            & img {
+                max-height: 15.9rem;
+                min-width: 15.9rem;
+            }
+        }
+    }
+}
+
+// Title
+.about .about__ttl,
+.skillBox .skillBox__ttl {
+    & .ttWrap {
+        & .ttlWrap__main {
+            padding-bottom: 0 !important;
+            > span {
+                transform: translateY(80%);
+                line-height: 0.9;
+                margin-bottom: -3%;
+            }
+            &:before {
+                height: calc(100% - 0px);
+                top: 3% !important;
+            }
+        }
+    }
+}

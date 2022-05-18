@@ -1,0 +1,223 @@
+// common css
+*,*::before,*::after {
+    margin: 0;
+}
+
+img {
+    object-fit: cover;
+}
+
+// mv
+.main-visual {
+    position: relative;
+    background: linear-gradient(45deg, $waveBgFirst,$waveBcSecond);
+    background-size: 200% 200%;
+    animation: bggradient 20s ease infinite;
+    height: auto;
+    &__ttl {
+        font-family: $enFont;
+        padding-top: 10.5vh;
+        margin: 0 auto;
+        & .mv__ttlWrap {
+            & h1 {
+                color: $darkTxt;
+                font-size: $mvTtl;
+                & .mv__ttlBold {
+                    display: inline-block;
+                    font-weight: $mvTtlWeight;
+                }
+            }
+        }
+        & .mv__snsWrap {
+            display: flex;
+            align-items: baseline;
+            flex-flow: row wrap;
+            color: $darkTxtSub;
+            & h3 {
+                z-index: 3;
+            }
+            & .mv__snsBox {
+                z-index: 3;
+                & ul {
+                    display: flex;
+                    padding-left: .9vw;
+                    & li {
+                        list-style-type: none;
+                        & a {
+                            & .my-big {
+                                transition: all .3s ease;
+                                font-size: 1.55em;
+                                margin-right: 15px;
+                                color: $darkTxtSub;
+                            }
+                        }
+                        &:hover {
+                            & a {
+                                & .my-big {
+                                    color: $darkTxt;
+                                    transform: scale(1.3);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    & .waveBox {
+        position: relative;
+        top: -1%;
+        height: 275px;
+        &__wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            & svg {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: fit-content;
+                & path {
+                    fill: $darkTxt;
+                }
+            }
+        }
+    }
+}
+
+// Who I am
+.about {
+    &__ttl {
+        margin-bottom: $underTtl;
+    }
+    &__contents {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        align-items: flex-end;
+        position: relative;
+        & .textWrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 3vw;
+            min-height: 29.9rem;
+            height: 100%;
+            > h3 {
+                padding-bottom: $underH3;
+                color: $waveBcSecond;
+            }
+            > p {
+                line-height: $pc-lineHeight;
+                display: block;
+            }
+        }
+        & .myPhoto {
+            margin: 0 auto;
+            background: linear-gradient(45deg, $darkTxtSub,$waveBgFirst);
+            display: inline-block;
+            border-radius: 61% 38% 62% 39% / 26% 49% 51% 75%;
+            height: 100%;
+            box-shadow: 11px 10px 0px 5px $darkTxtSub;
+            & img {
+                margin: 0 auto;
+                display:block;
+                width: 100%;
+                max-height: 18.9rem;
+                height: 100%;
+                object-position: 100% 0;
+                border-radius: 61% 38% 62% 39% / 26% 49% 51% 75%;
+            }
+        }
+    }
+}
+
+
+// Skills & Tools
+.skillBox {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh;
+}
+.skillBox__bg {
+    
+}
+
+// Work
+.workBox {
+    height: 70vh;
+}
+
+// Title
+.about .about__ttl,
+.skillBox .skillBox__ttl,
+.workBox .workBox__ttl {
+    & .ttWrap {
+        & .ttlWrap__sub {
+            color: $contentsSubTtl;
+        }
+        & .ttlWrap__main {
+            position: relative;
+            display: inline-block;
+            color: $contentsMainTtl;
+            overflow: hidden;
+            vertical-align: bottom;
+            margin-bottom: 0 !important;
+            height: 100%;
+            padding-bottom: 3px;
+            > span {
+                animation: showTxt .35s ease-out forwards;
+                overflow: hidden;
+                line-height: .9;
+                transform: translateY(100%);
+                display: inline-block;
+                margin-bottom: -3%;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: calc(100% - 4px);
+                border-bottom: 4px solid;
+                border-color: $contentsMainTtl;
+                top: 10%;
+            }
+        }
+    }
+}
+
+// Slide-in animation
+.about__contents {
+    transform: translateY(50px);
+    opacity: 0;
+}
+.about__contents.is-active {
+    transition: .65s ease-in-out;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+// Animations
+@keyframes bggradient{
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+@keyframes showTxt {
+    100% {
+        transform: translateY(10%);
+    }
+}

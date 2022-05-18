@@ -1,0 +1,24 @@
+// mv
+.main-visual {
+    &__ttl {
+        padding-top: 8.5vh;
+        & .mv__ttlWrap {
+            & h1 {
+                font-size: $mvTtlTb;
+            }
+        }
+    }
+    & .waveBox {
+        height: 150px;
+    }
+}
+
+// Who I am
+.about {
+    &__contents {
+        flex-direction: column-reverse;
+        & .textWrap {
+            padding: 0;
+        }
+    }
+}
